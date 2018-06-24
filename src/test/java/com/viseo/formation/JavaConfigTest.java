@@ -1,6 +1,5 @@
 package com.viseo.formation;
 
-import com.viseo.formation.config.MediaPlayerConfig;
 import com.viseo.formation.config.RandomMediaPlayerConfig;
 import com.viseo.formation.sound.IMediaFile;
 import com.viseo.formation.sound.IMediaPlayer;
