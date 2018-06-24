@@ -5,13 +5,13 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.stereotype.Component;
 
 @Component ("California Love")
-public class HipHopMP3File implements IMediaFile {
+public class Soca2MP3File implements IMediaFile {
 
-    private String title = "California Love";
+    private String title = "Frenzy";
 
-    private String artist = "Tupac Shakur";
+    private String artist = "Rupee";
 
-    private String album = "All Eyez on Me";
+    private String album = "Frenzy";
 
     private Integer duration = 240;
 

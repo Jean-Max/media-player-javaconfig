@@ -1,16 +1,17 @@
 package com.viseo.formation.sound.impl;
 
 import com.viseo.formation.sound.IMediaFile;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.stereotype.Component;
 
 @Component ("California Love")
 public class RockMP3File implements IMediaFile {
 
-    private String title = "California Love";
+    private String title = "Ride";
 
-    private String artist = "Tupac Shakur";
+    private String artist = "Twenty One Pilots";
 
-    private String album = "All Eyez on Me";
+    private String album = "Blurry Face";
 
     private Integer duration = 240;
 
@@ -49,5 +50,10 @@ public class RockMP3File implements IMediaFile {
 
     public void setDuration(Integer duration) {
         this.duration = duration;
+    }
+
+    @Override
+    public String toString()  {
+        return ToStringBuilder.reflectionToString(this);
     }
 }

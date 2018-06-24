@@ -1,6 +1,7 @@
 package com.viseo.formation.sound.impl;
 
 import com.viseo.formation.sound.IMediaFile;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.stereotype.Component;
 
 @Component ("California Love")
@@ -49,5 +50,10 @@ public class PopMP3File implements IMediaFile {
 
     public void setDuration(Integer duration) {
         this.duration = duration;
+    }
+
+    @Override
+    public String toString()  {
+        return ToStringBuilder.reflectionToString(this);
     }
 }
