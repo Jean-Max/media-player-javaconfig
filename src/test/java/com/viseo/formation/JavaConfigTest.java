@@ -41,9 +41,7 @@ public class JavaConfigTest {
 
     @Test
     public void media_player_should_note_be_null(){
-
         Assert.assertNotNull(randomMediaPlayer);
-
         System.out.println(randomMediaPlayer.playMedia());
     }
 }

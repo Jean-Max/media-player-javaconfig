@@ -1,6 +1,8 @@
 package com.viseo.formation.config;
 
-import com.viseo.formation.sound.*;
+import com.viseo.formation.sound.IMediaFile;
+import com.viseo.formation.sound.IMediaPlayer;
+import com.viseo.formation.sound.MP3Player;
 import com.viseo.formation.sound.impl.HipHopMP3File;
 import com.viseo.formation.sound.impl.PopMP3File;
 import com.viseo.formation.sound.impl.RockMP3File;
@@ -8,17 +10,11 @@ import com.viseo.formation.sound.impl.SocaMP3File;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Random;
-
 @Configuration
 public class RandomMediaPlayerConfig {
 
     @Bean(name = "randomMP3")
     public IMediaFile randomMediaFile(){
-
-        Random r = new Random();
-        int[] fiveRandomNumbers = r.ints(4, 0, 10).toArray();
-        int randomNumber = r.ints(1, 0, 11).findFirst().getAsInt();
 
         int choice = (int)Math.floor(Math.random()*4);
         IMediaFile audioFile = null;
