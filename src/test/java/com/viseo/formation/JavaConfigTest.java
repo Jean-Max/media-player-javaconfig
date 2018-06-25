@@ -15,32 +15,19 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes = {RandomMediaPlayerConfig.class}) // Tells Spring to load the configuration
 public class JavaConfigTest {
 
-    @Autowired
-    @Qualifier("randomMP3")
-    private IMediaFile randomMediafile;
 
     @Autowired
     @Qualifier("randomMediaPlayer")
     private IMediaPlayer randomMediaPlayer;
 
     @Test
-    public void media_file_should_not_be_null(){
-
-        Assert.assertNotNull(randomMediafile);
-        Assert.assertNotNull(randomMediafile.getTitle());
-        Assert.assertNotNull(randomMediafile.getArtist());
-        Assert.assertNotNull(randomMediafile.getAlbum());
-        Assert.assertNotNull(randomMediafile.getDuration());
-
-        System.out.println("Song title is:" + randomMediafile.getTitle());
-        System.out.println("Album is:" + randomMediafile.getAlbum());
-        System.out.println("Artist performing is:" + randomMediafile.getArtist());
-        System.out.println("Song duration is:" + randomMediafile.getDuration());
-    }
-
-    @Test
-    public void media_player_should_note_be_null(){
+    public void media_player_should_play_media_randomly(){
         Assert.assertNotNull(randomMediaPlayer);
-        System.out.println(randomMediaPlayer.playMedia());
+        String playedFile1 = randomMediaPlayer.playMedia();
+        String playedFile2 = randomMediaPlayer.playMedia();
+        System.out.println(playedFile1);
+        System.out.println(playedFile2);
+
+        Assert.assertNotEquals(playedFile1.toString(), playedFile2.toString());
     }
 }
