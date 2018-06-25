@@ -31,7 +31,6 @@ public class MP3Player implements IMediaPlayer {
         System.out.println("User Media Playlist has been initialized with " + this.playlist.size() + " audio files!");
     }
 
-
     public String playMedia() {
         final int index = getRandomNumberInRange(0, this.playlist.size() - 1);
         System.out.println("Audio file selected number: " + index);
@@ -41,7 +40,9 @@ public class MP3Player implements IMediaPlayer {
 
     @PreDestroy
     public void DestroyUserPlaylist(){
+        System.out.println("Before pre destroy hook, user playlist contains: " + this.playlist.size() + " media files");
         this.playlist.clear();
+        System.out.println("After pre destroy hook, user playlist contains: " + this.playlist.size() + " media files");
     }
 
     public List<IMediaFile> getPlaylist() {

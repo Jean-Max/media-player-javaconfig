@@ -13,5 +13,7 @@ public class RunApplication {
         IMediaPlayer randomMediaPlayer = (IMediaPlayer) context.getBean("randomMediaPlayer");
         System.out.println("The current song playing is:" + randomMediaPlayer.playMedia());
 
+        // Close the context to force beans destruction
+        context.close();
     }
 }
