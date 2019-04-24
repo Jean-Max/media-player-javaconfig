@@ -9,11 +9,14 @@ import org.springframework.test.context.ContextConfiguration;
 public class RunApplication {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(RandomMediaPlayerConfig.class);
-        IMediaPlayer randomMediaPlayer = (IMediaPlayer) context.getBean("randomMediaPlayer");
-        System.out.println("The current song playing is:" + randomMediaPlayer.playMedia());
+
+        //Get application context
+
+
+        // Display current song playing
+
 
         // Close the context to force beans destruction
-        context.close();
+
     }
 }

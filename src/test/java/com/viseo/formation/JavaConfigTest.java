@@ -16,18 +16,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class JavaConfigTest {
 
 
-    @Autowired
-    @Qualifier("randomMediaPlayer")
-    private IMediaPlayer randomMediaPlayer;
-
     @Test
     public void media_player_should_play_media_randomly(){
-        Assert.assertNotNull(randomMediaPlayer);
-        String playedFile1 = randomMediaPlayer.playMedia();
-        String playedFile2 = randomMediaPlayer.playMedia();
-        System.out.println(playedFile1);
-        System.out.println(playedFile2);
-
-        Assert.assertNotEquals(playedFile1.toString(), playedFile2.toString());
+       
     }
 }
