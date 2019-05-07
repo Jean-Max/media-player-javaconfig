@@ -8,7 +8,7 @@
 	<name>mp3-player-app</name>
 
 	<properties>
-		<spring.version>4.3.14.RELEASE</spring.version>
+		<spring.version>4.3.16.RELEASE</spring.version>
         <junit.version>4.12</junit.version>
 	</properties>
 
