@@ -26,7 +26,6 @@ public class JavaConfigTest {
     @Test
     public void media_player_should_not_be_null(){
         Assert.assertNotNull(randomMediaPlayer);
-        System.out.println(randomMediaPlayer.playMedia());
     }
 
     @Test
@@ -48,12 +47,6 @@ public class JavaConfigTest {
         Assert.assertNotNull(randomMediaFile.getArtist());
         Assert.assertNotNull(randomMediaFile.getAlbum());
         Assert.assertNotNull(randomMediaFile.getDuration());
-
-        // Display media file properties
-        System.out.println("Song title is:" + randomMediaFile.getTitle());
-        System.out.println("Album is:" + randomMediaFile.getAlbum());
-        System.out.println("Artist performing is:" + randomMediaFile.getArtist());
-        System.out.println("Song duration is:" + randomMediaFile.getDuration());
     }
 
 }

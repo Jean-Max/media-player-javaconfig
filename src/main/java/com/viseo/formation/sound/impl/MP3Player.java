@@ -3,7 +3,6 @@ package com.viseo.formation.sound.impl;
 
 import com.viseo.formation.sound.IMediaFile;
 import com.viseo.formation.sound.IMediaPlayer;
-import com.viseo.formation.util.MediaPlayerUtils;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -42,12 +41,9 @@ public class MP3Player implements IMediaPlayer {
         return playlist;
     }
 
-    public String playMedia() {
-
-        final Integer index = MediaPlayerUtils.getRandomNumberInRange(0, this.playlist.size() - 1);
-        System.out.println("You have selected audio file number: " + index);
-        IMediaFile mediaFileSelected = this.playlist.get(index);
-
+    public String playMedia(Integer mediaFileIndex) {
+        System.out.println("You have selected audio file number: " + mediaFileIndex);
+        IMediaFile mediaFileSelected = this.playlist.get(mediaFileIndex);
         return mediaFileSelected.play();
     }
 
