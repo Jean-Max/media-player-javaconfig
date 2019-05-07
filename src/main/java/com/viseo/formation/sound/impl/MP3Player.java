@@ -15,10 +15,6 @@ public class MP3Player implements IMediaPlayer {
 
     public MP3Player(){}
 
-    public MP3Player(List<IMediaFile> playlist){
-        this.playlist = playlist;
-    }
-
     @PostConstruct
     public void InitUserPlaylist(){
         this.playlist = new ArrayList<IMediaFile>();
@@ -34,6 +30,7 @@ public class MP3Player implements IMediaPlayer {
 
     @PreDestroy
     public void DestroyUserPlaylist(){
+        System.out.println("Now the play list will be erased!!");
         this.playlist.clear();
     }
 
@@ -41,10 +38,9 @@ public class MP3Player implements IMediaPlayer {
         return playlist;
     }
 
-    public String playMedia(Integer mediaFileIndex) {
+    public void playMedia(Integer mediaFileIndex) {
         System.out.println("You have selected audio file number: " + mediaFileIndex);
-        IMediaFile mediaFileSelected = this.playlist.get(mediaFileIndex);
-        return mediaFileSelected.play();
+        this.playlist.get(mediaFileIndex).play();
     }
 
 }
