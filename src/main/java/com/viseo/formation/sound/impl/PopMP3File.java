@@ -4,7 +4,7 @@ import com.viseo.formation.sound.IMediaFile;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.stereotype.Component;
 
-@Component ("California Love")
+@Component ("Smooth Criminal")
 public class PopMP3File implements IMediaFile {
 
     private String title = "Smooth Criminal";

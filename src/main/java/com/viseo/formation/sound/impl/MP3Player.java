@@ -31,7 +31,6 @@ public class MP3Player implements IMediaPlayer {
         System.out.println("User Media Playlist has been initialized with " + this.playlist.size() + " audio files!");
     }
 
-
     public String playMedia() {
         final int index = getRandomNumberInRange(0, this.playlist.size() - 1);
         System.out.println("Audio file selected number: " + index);

@@ -4,7 +4,7 @@ import com.viseo.formation.sound.IMediaFile;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.stereotype.Component;
 
-@Component ("California Love")
+@Component ("Ride")
 public class RockMP3File implements IMediaFile {
 
     private String title = "Ride";
