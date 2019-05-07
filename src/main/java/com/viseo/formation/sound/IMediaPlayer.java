@@ -12,7 +12,6 @@ public interface IMediaPlayer {
 
     /**
      * Play the selected media file
-     * @return
      */
-    String playMedia(final Integer mediaFileIndex);
+    void playMedia(final Integer mediaFileIndex);
 }

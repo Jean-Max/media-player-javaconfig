@@ -15,36 +15,23 @@ public class MP3Player implements IMediaPlayer {
 
     public MP3Player(){}
 
-    public MP3Player(List<IMediaFile> playlist){
-        this.playlist = playlist;
-    }
-
-    @PostConstruct
+    //TODO: Initialize the playlist with all MP3 files after Mediaplayer instanciation!!
     public void InitUserPlaylist(){
-        this.playlist = new ArrayList<IMediaFile>();
-        this.playlist.add(new SocaMP3File());
-        this.playlist.add(new Soca2MP3File());
-        this.playlist.add(new HipHopMP3File());
-        this.playlist.add(new HipHop2MP3File());
-        this.playlist.add(new PopMP3File());
-        this.playlist.add(new RockMP3File());
-
         System.out.println("User Media Playlist has been initialized with " + this.playlist.size() + " audio files!");
     }
 
-    @PreDestroy
+    // TODO: Erase the playlist before application context deletion!
     public void DestroyUserPlaylist(){
-        this.playlist.clear();
+
+    }
+
+    // TODO: Play the selected MP3 file
+    public void playMedia(Integer mediaFileIndex) {
+        System.out.println("You have selected audio file number: " + mediaFileIndex);
     }
 
     public List<IMediaFile> getPlaylist() {
         return playlist;
-    }
-
-    public String playMedia(Integer mediaFileIndex) {
-        System.out.println("You have selected audio file number: " + mediaFileIndex);
-        IMediaFile mediaFileSelected = this.playlist.get(mediaFileIndex);
-        return mediaFileSelected.play();
     }
 
 }
