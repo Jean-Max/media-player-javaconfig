@@ -3,6 +3,7 @@ package com.viseo.formation.sound.impl;
 
 import com.viseo.formation.sound.IMediaFile;
 import com.viseo.formation.sound.IMediaPlayer;
+import com.viseo.formation.util.MediaPlayerUtils;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -27,15 +28,9 @@ public class MP3Player implements IMediaPlayer {
         this.playlist.add(new HipHopMP3File());
         this.playlist.add(new HipHop2MP3File());
         this.playlist.add(new PopMP3File());
+        this.playlist.add(new RockMP3File());
 
         System.out.println("User Media Playlist has been initialized with " + this.playlist.size() + " audio files!");
-    }
-
-    public String playMedia() {
-        final int index = getRandomNumberInRange(0, this.playlist.size() - 1);
-        System.out.println("Audio file selected number: " + index);
-        IMediaFile mediaFileSelected = this.playlist.get(index);
-        return mediaFileSelected.play();
     }
 
     @PreDestroy
@@ -47,11 +42,13 @@ public class MP3Player implements IMediaPlayer {
         return playlist;
     }
 
-    private static int getRandomNumberInRange(int min, int max) {
-        if (min >= max) {
-            throw new IllegalArgumentException("max must be greater than min");
-        }
-        return (int)(Math.random() * ((max - min) + 1)) + min;
+    public String playMedia() {
+
+        final Integer index = MediaPlayerUtils.getRandomNumberInRange(0, this.playlist.size() - 1);
+        System.out.println("You have selected audio file number: " + index);
+        IMediaFile mediaFileSelected = this.playlist.get(index);
+
+        return mediaFileSelected.play();
     }
 
 }

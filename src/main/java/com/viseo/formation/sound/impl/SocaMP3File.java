@@ -4,7 +4,7 @@ import com.viseo.formation.sound.IMediaFile;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.stereotype.Component;
 
-@Component ("California Love")
+@Component ("Mr. Fete")
 public class SocaMP3File implements IMediaFile {
 
     private String title = "Mr. Fete";

@@ -4,7 +4,7 @@ import com.viseo.formation.sound.IMediaFile;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.stereotype.Component;
 
-@Component ("California Love")
+@Component ("The Real Slame Shady")
 public class HipHop2MP3File implements IMediaFile {
 
     private String title = "The Real Slame Shady";
