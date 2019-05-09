@@ -42,7 +42,7 @@ public class JavaConfigTest {
         Integer randomIndex = MediaPlayerUtils.getRandomNumberInRange(0, randomMediaPlayer.getPlaylist().size()-1);
         IMediaFile randomMediaFile = randomMediaPlayer.getPlaylist().get(randomIndex);
 
-        // Check properties of random media file
+        // Check random media file is consistent
         Assert.assertNotNull(randomMediaFile.getTitle());
         Assert.assertNotNull(randomMediaFile.getArtist());
         Assert.assertNotNull(randomMediaFile.getAlbum());
